@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://lromill1nrdi"]
+
+[ext_resource type="PackedScene" uid="uid://jup78kyxshbe" path="res://player/player.tscn" id="1_oh65y"]
+
+[sub_resource type="Sky" id="Sky_o22fk"]
+
+[sub_resource type="Environment" id="Environment_cvned"]
+background_mode = 1
+background_color = Color(0.498039, 0.8, 0.8, 1)
+sky = SubResource("Sky_o22fk")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0.729412, 0.823529, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 2
+glow_enabled = true
+
+[node name="Node" type="Node"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Node3D"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/CSGCombiner3D"]
+size = Vector3(16, 1, 16)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.93761, 0.347689, 0, -0.347689, 0.93761, 0, 5.34742, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_cvned")
+
+[node name="CharacterBody3D" parent="Node3D" instance=ExtResource("1_oh65y")]
