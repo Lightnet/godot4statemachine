@@ -1,7 +1,7 @@
 # Godot 4 State Machine
 
 # Information
-  Learning how state machine works. Simple example of 2D move in 3D world.
+  Learning how state machine works.
   
   Godot 3 to 4 have little different api call func's. But still same layout.
 ```
